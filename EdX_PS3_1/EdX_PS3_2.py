@@ -15,7 +15,7 @@ def getGuessedWord(secretWord, lettersGuessed):
             guessedWord += BLANK
     return guessedWord
 
-secretWord = 'stuckup' #'apple' 
-lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
+secretWord = 'apple' 
+lettersGuessed = ['p', 'l', 'a', 'e'] #['e', 'i', 'k', 'p', 'r', 's']
 print getGuessedWord(secretWord, lettersGuessed)
 #'_ pp_ e'

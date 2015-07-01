@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>61926c7a-4c9e-44ca-966f-af57cc08bee6</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>EdX_PS3_3.py</StartupFile>
+    <StartupFile>ps3_hangman.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -29,6 +29,7 @@
     <Compile Include="EdX_PS3_3.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ps3_hangman-Original.py" />
     <Compile Include="ps3_hangman.py" />
   </ItemGroup>
   <ItemGroup>

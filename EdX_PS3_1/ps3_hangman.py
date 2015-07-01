@@ -1,3 +1,5 @@
+#! python2.7
+
 # 6.00 Problem Set 3
 # 
 # Hangman game
@@ -54,6 +56,12 @@ def isWordGuessed(secretWord, lettersGuessed):
       False otherwise
     '''
     # FILL IN YOUR CODE HERE...
+    guess = True
+    for c in secretWord:
+        if c not in lettersGuessed:
+            guess = False
+            break
+    return guess
 
 
 
@@ -65,7 +73,13 @@ def getGuessedWord(secretWord, lettersGuessed):
       what letters in secretWord have been guessed so far.
     '''
     # FILL IN YOUR CODE HERE...
-
+    guessedWord = ''
+    for c in secretWord:
+        if c in lettersGuessed:
+            guessedWord += c
+        else:
+            guessedWord += '_ '
+    return guessedWord
 
 
 def getAvailableLetters(lettersGuessed):
@@ -75,6 +89,11 @@ def getAvailableLetters(lettersGuessed):
       yet been guessed.
     '''
     # FILL IN YOUR CODE HERE...
+    availableLetters = string.ascii_lowercase
+    for letter in lettersGuessed:
+        availableLetters = availableLetters.replace(letter, '')
+
+    return availableLetters
     
 
 def hangman(secretWord):
@@ -98,8 +117,17 @@ def hangman(secretWord):
     Follows the other limitations detailed in the problem write-up.
     '''
     # FILL IN YOUR CODE HERE...
+    print 'Welcome to the game, Hangman!'
+    print 'I am thinking of a word that is ' + str(len(secretWord)) + ' letters long.'
+    print '-------------'
+    mistakesMade = 0
+    lettersGuessed = ['t','a','c','t']
+    while mistakesMade < 8 and getGuessedWord(secretWord, lettersGuessed) != secretWord:
+        print 'Playing game'
 
 
+    if getGuessedWord(secretWord, lettersGuessed) == secretWord:
+        print 'Congratulations, you won!'
 
 
 
@@ -108,5 +136,10 @@ def hangman(secretWord):
 # and run this file to test! (hint: you might want to pick your own
 # secretWord while you're testing)
 
-# secretWord = chooseWord(wordlist).lower()
-# hangman(secretWord)
+#secretWord = chooseWord(wordlist).lower()
+#hangman(secretWord)
+hangman('tact')
+
+#lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
+#print getAvailableLetters(lettersGuessed)
+
